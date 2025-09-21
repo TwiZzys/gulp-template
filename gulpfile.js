@@ -7,12 +7,22 @@ import {images} from "./gulp/tasks/images.js";
 import {imagesModules} from "./gulp/tasks/imagesModules.js";
 import {convertWebp} from "./gulp/tasks/convertWebp.js";
 import {convertWebpModules} from "./gulp/tasks/convertWebpModules.js";
+import {convertAvif} from "./gulp/tasks/convertAvif.js";
+import {convertAvifModules} from "./gulp/tasks/convertAvifModules.js";
 
 const {series, parallel} = gulp;
+
 export const dev = series(
     styles,
     scripts,
-    series(images, imagesModules, convertWebp, convertWebpModules),
+    series(
+        images,
+        imagesModules,
+        convertWebp,
+        convertWebpModules,
+        convertAvif,
+        convertAvifModules
+    ),
     parallel(server, watching)
 );
 
@@ -23,6 +33,8 @@ export {
     imagesModules,
     convertWebp,
     convertWebpModules,
+    convertAvif,
+    convertAvifModules,
     server,
     watching,
 };

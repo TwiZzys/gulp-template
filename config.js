@@ -58,5 +58,8 @@ export const config = {
     },
     webp: {
         quality: 75,
+    },
+    avif: {
+        quality: 65,
     }
 }

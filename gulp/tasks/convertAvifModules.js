@@ -1,5 +1,5 @@
 import gulp from "gulp";
-import webp from "gulp-webp";
+import avif from "gulp-avif";
 import rename from "gulp-rename";
 import path from "path";
 import newer from "gulp-newer";
@@ -11,20 +11,19 @@ const {srcFilesWebpModules, baseDirModules} = config.images;
 const {quality} = config.webp;
 const {src, dest} = gulp;
 
-export const convertWebpModules = () => {
+export const convertAvifModules = () => {
     return src(srcFilesWebpModules, {base: baseDirModules})
-        // Перевіряємо тільки по webp-версії
         .pipe(newer({
             dest: imagesFolder,
-            ext: ".webp"
+            ext: ".avif"
         }))
-        .pipe(webp({quality}))
+        .pipe(avif({quality}))
         .pipe(rename((file) => {
-            // file.dirname = <module>/images/... → видаляємо 'images'
             const parts = file.dirname.split(path.sep);
-            if (parts[1] === "images") parts.splice(1, 1);
+            if (parts[1] === "images") parts.splice(1, 1); // прибираємо "images"
             file.dirname = parts.join(path.sep);
         }))
         .pipe(dest(imagesFolder))
         .on("end", () => bs.reload());
+
 };

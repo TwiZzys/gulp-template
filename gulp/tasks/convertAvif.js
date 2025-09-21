@@ -1,5 +1,5 @@
 import gulp from "gulp";
-import webp from "gulp-webp";
+import avif from "gulp-avif";
 import newer from "gulp-newer";
 import {config} from "../../config.js";
 import {bs} from "./server.js";
@@ -8,10 +8,10 @@ const {imagesFolder} = config.src;
 const {srcFilesWebp, baseDir} = config.images;
 const {quality} = config.webp;
 
-export const convertWebp = () => {
+export const convertAvif = () => {
     return gulp.src(srcFilesWebp, {base: baseDir}) // базова директорія
-        .pipe(newer({dest: imagesFolder, ext: ".webp"})) // пропускає файли, які вже є в webp
-        .pipe(webp({quality}))
-        .pipe(gulp.dest(imagesFolder)) // зберігаємо з тією ж структурою
+        .pipe(newer({dest: imagesFolder, ext: ".avif"})) // пропускає вже існуючі
+        .pipe(avif({quality})) // якість можна змінити
+        .pipe(gulp.dest(imagesFolder)) // зберігаємо структуру
         .on("end", () => bs.reload());
 };
