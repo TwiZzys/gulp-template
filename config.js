@@ -1,11 +1,14 @@
 const root = 'app';
+const dist = 'dist';
 
 export const config = {
     root,
+    dist,
     src: {
         jsFolder: `${root}/js`,
         cssFolder: `${root}/css`,
         imagesFolder: `${root}/images`,
+        faviconFolder: `${dist}/favicon`,
     },
     server: {
         baseDir: root,
@@ -81,5 +84,37 @@ export const config = {
     },
     html: {
         srcFile: `${root}/index-src.html`,
-    }
+        srcFilesForDist: `${dist}/**/*.html`,
+        srcIndexFileForDist: `${dist}/index.html`,
+    },
+    htmlmin: {
+        options: {
+            collapseWhitespace: true, // видаляє зайві пробіли і перенос рядків
+            removeComments: true, // видаляє коментарі
+            removeRedundantAttributes: true, // видаляє атрибути за замовчуванням
+            useShortDoctype: true, // короткий Doctype
+            minifyCSS: true, // мінімізує inline CSS
+            minifyJS: true, // мінімізує inline JS
+            removeEmptyAttributes: true, // видаляє порожні атрибути
+            removeOptionalTags: false, // не видаляє необов’язкові теги
+            removeEmptyElements: false, // не видаляє пусті елементи
+            sortAttributes: true, // сортує атрибути
+            sortClassName: true, // сортує класи в class=""
+        },
+    },
+    favicon: {
+        srcFiles: `${root}/favicon/**/*.{png,jpg,jpeg,ico,svg}`,
+    },
+    prod: {
+            srcFiles: [
+                `${root}/**/*.html`,
+                `!${root}/**/*-src.html`, // виключаємо сирцеві HTML
+                `${root}/css/**/*.css`,
+                `${root}/js/**/*.min.js`,
+                `${root}/images/**/*`,
+                `!${root}/images/sprite-src{,/**}`, // виключаємо sprite-src
+                `${root}/fonts/**/*.{woff,woff2}`,
+                `!${root}/modules{,/**}`, // виключаємо modules
+            ],
+        },
 }
