@@ -1,0 +1,28 @@
+@mixin bg(
+    $module,
+    $imageName,
+    $format: jpg,
+    $repeat: no-repeat,
+    $position: center,
+    $size: cover
+) {
+    $avifPath: "../images/modules/#{$module}/#{$imageName}.avif";
+    $webpPath: "../images/modules/#{$module}/#{$imageName}.webp";
+    $fallbackPath: "../images/modules/#{$module}/#{$imageName}.#{$format}";
+
+    // fallback
+    background-image: url(#{$fallbackPath});
+    background-repeat: $repeat;
+    background-position: $position;
+    background-size: $size;
+
+    // якщо браузер підтримує AVIF
+    .avif & {
+        background-image: url(#{$avifPath});
+    }
+
+    // якщо браузер підтримує WebP
+    .webp & {
+        background-image: url(#{$webpPath});
+    }
+}

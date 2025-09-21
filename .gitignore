@@ -1,0 +1,51 @@
+# Node modules
+node_modules/
+
+# Production / збірка
+dist/
+build/
+
+# CSS
+app/css/**/*.css
+app/css/**/*.map
+
+# Favicon
+app/favicon/**/*
+
+# Fonts
+app/fonts/**/*
+
+# Глобальні зображення (ігнор усіх файлів, крім sprite-src та .gitkeep)
+app/images/**
+!app/images/sprite-src/
+!app/images/**/.gitkeep
+
+# Спрайт (готовий файл ігноруємо)
+app/images/sprite.svg
+
+# Модульні зображення (ігнор усіх файлів, крім sprite-src та .gitkeep)
+app/modules/**/images/**
+!app/modules/**/images/sprite-src/
+!app/modules/**/images/**/*.gitkeep
+
+# JS
+app/js/**/*.js
+app/js/**/*.map
+!app/js/src/main.js
+
+# SCSS шаблони (всі файли і папки потрапляють у Git)
+!app/scss/**/*.scss
+!app/modules/**/scss/**/*.scss
+
+# Логи
+*.log
+yarn-error.log
+npm-debug.log
+
+# IDE / редактори
+.idea/
+.vscode/
+
+# Системні файли
+.DS_Store
+Thumbs.db
