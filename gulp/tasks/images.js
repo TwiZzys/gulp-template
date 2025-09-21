@@ -7,9 +7,10 @@ import {bs} from "./server.js";
 const {srcFiles, baseDir} = config.images;
 const {imagesFolder} = config.src;
 const {quality, progressive, optimizationLevel} = config.imagemin;
+const {src, dest} = gulp;
 
 export const images = () => {
-    return gulp.src(srcFiles, {base: baseDir})
+    return src(srcFiles, {base: baseDir})
         .pipe(newer(imagesFolder))
         .pipe(
             imagemin([
@@ -21,6 +22,6 @@ export const images = () => {
                 svgo()
             ])
         )
-        .pipe(gulp.dest(imagesFolder))
+        .pipe(dest(imagesFolder))
         .on("end", () => bs.reload());
 };

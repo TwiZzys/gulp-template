@@ -40,6 +40,14 @@ export const config = {
             `!${root}/modules/*/images/sprite-src/**/*`,
             `!${root}/images/**/*`,
         ],
+        srcFilesWebp: [
+            `${root}/images/**/*.{png,jpg,jpeg}`,
+            `!${root}/images/sprite-src/**/*`,
+        ],
+        srcFilesWebpModules: [
+            `${root}/modules/*/images/**/*.{png,jpg,jpeg}`,
+            `!${root}/modules/*/images/sprite-src/**/*`
+        ],
         baseDir: `${root}/images/`,
         baseDirModules: `${root}/modules/`,
     },
@@ -47,5 +55,8 @@ export const config = {
         quality: 75,
         progressive: true,
         optimizationLevel: 5,
+    },
+    webp: {
+        quality: 75,
     }
 }

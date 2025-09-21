@@ -5,7 +5,7 @@ export const bs = browserSync.create(); // екземпляр BrowserSync
 
 const {baseDir, open, notify, port} = config.server;
 
-export function server() {
+export const server = () => {
     bs.init({
         server: {baseDir},
         open,
