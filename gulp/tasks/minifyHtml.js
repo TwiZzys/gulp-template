@@ -2,8 +2,10 @@ import gulp from "gulp";
 import htmlmin from "gulp-htmlmin";
 import {config} from "../../config.js";
 
+const {src,dest} = gulp;
+
 export const minifyHtml = () => {
-    return gulp.src(config.html.srcIndexFileForDist)
+    return src(config.html.srcIndexFileForDist)
         .pipe(htmlmin(config.htmlmin.options))
-        .pipe(gulp.dest(config.dist));
+        .pipe(dest(config.dist));
 };
