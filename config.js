@@ -4,6 +4,7 @@ export const config = {
     src: {
         jsFolder: `${root}/js`,
         cssFolder: `${root}/css`,
+        imagesFolder: `${root}/images`,
     },
     server: {
         baseDir: root,
@@ -26,4 +27,25 @@ export const config = {
         ],
         mainJs: `${root}/js/src/main.js`,
     },
+
+    images: {
+        srcFiles: [
+            `${root}/images/**/*.{png,jpg,jpeg,gif,ico,svg}`,
+            `!${root}/images/sprite-src/*.svg`,
+            `!${root}/images/modules/**/*`,
+            `!${root}/images/sprite.svg`
+        ],
+        srcFilesModules: [
+            `${root}/modules/*/images/**/*.{png,jpg,jpeg,gif,ico,svg}`,
+            `!${root}/modules/*/images/sprite-src/**/*`,
+            `!${root}/images/**/*`,
+        ],
+        baseDir: `${root}/images/`,
+        baseDirModules: `${root}/modules/`,
+    },
+    imagemin: {
+        quality: 75,
+        progressive: true,
+        optimizationLevel: 5,
+    }
 }
