@@ -8,8 +8,10 @@ import {convertWebp} from "./convertWebp.js";
 import {convertWebpModules} from "./convertWebpModules.js";
 import {convertAvif} from "./convertAvif.js";
 import {convertAvifModules} from "./convertAvifModules.js";
+import {cleanSprite} from "./cleanSprite.js";
+import {sprite} from "./sprite.js";
 
-const { watch, series } = gulp;
+const {watch, series} = gulp;
 
 export const watching = () => {
 
@@ -36,6 +38,15 @@ export const watching = () => {
             imagesModules,       // копіювання та оптимізація
             convertWebpModules,  // WebP
             convertAvifModules   // AVIF
+        )
+    );
+
+    //Sprite
+    watch(
+        config.sprite.srcFiles,
+        series(
+            cleanSprite,
+            sprite
         )
     );
 };

@@ -51,6 +51,13 @@ export const config = {
         baseDir: `${root}/images/`,
         baseDirModules: `${root}/modules/`,
     },
+    sprite: {
+        srcFiles: [
+            `${root}/images/sprite-src/**/*.svg`,
+            `${root}/modules/**/images/sprite-src/**/*.svg`,
+        ],
+        spriteFile: `${root}/images/sprite.svg`,
+    },
     imagemin: {
         quality: 75,
         progressive: true,
