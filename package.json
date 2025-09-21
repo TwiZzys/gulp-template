@@ -2,5 +2,9 @@
   "name": "gulp-git",
   "version": "1.0.0",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "gulp": "4.0.2"
+  }
 }
