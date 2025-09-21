@@ -8,10 +8,12 @@ const {imagesFolder} = config.src;
 const {srcFilesWebp, baseDir} = config.images;
 const {quality} = config.webp;
 
+const {src, dest} = gulp;
+
 export const convertWebp = () => {
-    return gulp.src(srcFilesWebp, {base: baseDir}) // базова директорія
+    return src(srcFilesWebp, {base: baseDir}) // базова директорія
         .pipe(newer({dest: imagesFolder, ext: ".webp"})) // пропускає файли, які вже є в webp
         .pipe(webp({quality}))
-        .pipe(gulp.dest(imagesFolder)) // зберігаємо з тією ж структурою
+        .pipe(dest(imagesFolder)) // зберігаємо з тією ж структурою
         .on("end", () => bs.reload());
 };

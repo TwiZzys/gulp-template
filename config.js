@@ -68,5 +68,14 @@ export const config = {
     },
     avif: {
         quality: 65,
-    }
+    },
+    fonts: {
+        srcFiles: [
+            `${root}/fonts/**/*`,
+            `!${root}/fonts/**/*.{woff,woff2}`,
+        ],
+        srcFolder: `${root}/fonts/`,
+        fontsFolder: `${root}/fonts`,
+        scssFile: `${root}/scss/_fonts.scss`
+    },
 }

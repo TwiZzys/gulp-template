@@ -10,6 +10,7 @@ import {convertAvif} from "./convertAvif.js";
 import {convertAvifModules} from "./convertAvifModules.js";
 import {cleanSprite} from "./cleanSprite.js";
 import {sprite} from "./sprite.js";
+import {fonts} from "./fonts.js";
 
 const {watch, series} = gulp;
 
@@ -47,6 +48,14 @@ export const watching = () => {
         series(
             cleanSprite,
             sprite
+        )
+    );
+
+    //Fonts
+    watch(
+        config.fonts.srcFiles,
+        series(
+            fonts
         )
     );
 };
