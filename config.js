@@ -1,6 +1,7 @@
 const root = 'app';
 
 export const config = {
+    root,
     src: {
         jsFolder: `${root}/js`,
         cssFolder: `${root}/css`,
@@ -78,4 +79,7 @@ export const config = {
         fontsFolder: `${root}/fonts`,
         scssFile: `${root}/scss/_fonts.scss`
     },
+    html: {
+        srcFile: `${root}/index-src.html`,
+    }
 }

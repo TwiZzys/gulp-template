@@ -11,6 +11,7 @@ import {convertAvifModules} from "./convertAvifModules.js";
 import {cleanSprite} from "./cleanSprite.js";
 import {sprite} from "./sprite.js";
 import {fonts} from "./fonts.js";
+import {htmlModules} from "./htmlModules.js";
 
 const {watch, series} = gulp;
 
@@ -56,6 +57,13 @@ export const watching = () => {
         config.fonts.srcFiles,
         series(
             fonts
+        )
+    );
+
+    watch(
+        config.html.srcFile,
+        series(
+            htmlModules
         )
     );
 };

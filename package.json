@@ -13,6 +13,7 @@
     "del": "^8.0.1",
     "gulp": "4.0.2",
     "gulp-avif": "^1.1.1",
+    "gulp-file-include": "^2.3.0",
     "gulp-fonter": "^0.3.0",
     "gulp-imagemin": "^9.1.0",
     "gulp-newer": "^1.4.0",

@@ -1,4 +1,7 @@
+// gulpfile.js
 import gulp from "gulp";
+
+// Таски
 import {server} from "./gulp/tasks/server.js";
 import {watching} from "./gulp/tasks/watching.js";
 import {styles} from "./gulp/tasks/styles.js";
@@ -12,15 +15,22 @@ import {convertAvifModules} from "./gulp/tasks/convertAvifModules.js";
 import {sprite} from "./gulp/tasks/sprite.js";
 import {cleanSprite} from "./gulp/tasks/cleanSprite.js";
 import {fonts} from "./gulp/tasks/fonts.js";
+import {htmlModules} from "./gulp/tasks/htmlModules.js";
 
 const {series, parallel} = gulp;
 
+// Головна dev-збірка
 export const dev = series(
-    // Спрайт спочатку
+    // Спочатку чистимо і створюємо спрайт
     series(cleanSprite, sprite),
 
-    // Потім стилі і скрипти
+    // Потім HTML
+    htmlModules,
+
+    // Далі шрифти
     fonts,
+
+    // Потім стилі і скрипти
     styles,
     scripts,
 
@@ -34,12 +44,13 @@ export const dev = series(
         convertAvifModules
     ),
 
-    // Паралельно сервер і watching
+    // І наостанок сервер + вотчери
     parallel(server, watching)
 );
 
 // Експортуємо всі таски для CLI
 export {
+    htmlModules,
     fonts,
     styles,
     scripts,
@@ -55,4 +66,5 @@ export {
     watching,
 };
 
+// Таск за замовчуванням
 export default dev;
