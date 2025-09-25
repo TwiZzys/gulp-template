@@ -1,0 +1,27 @@
+# Node modules
+node_modules/
+
+# Build / production
+dist/
+build/
+.tmp/
+.cache/
+
+# Логи
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# IDE / редактори
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Системні файли
+.DS_Store
+Thumbs.db
+
+# Інші тимчасові файли
+*.bak
+*.tmp
