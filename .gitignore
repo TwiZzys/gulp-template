@@ -13,7 +13,8 @@ app/css/**/*.map
 app/favicon/**/*
 
 # Fonts
-app/fonts/**/*
+app/fonts/**
+!app/fonts/**/.gitkeep
 
 # Глобальні зображення (ігнор усіх файлів, крім sprite-src та .gitkeep)
 app/images/**
@@ -32,10 +33,13 @@ app/modules/**/images/**
 app/js/**/*.js
 app/js/**/*.map
 !app/js/src/main.js
+!app/js/src/imageFormatsCheck.js
 
 # SCSS шаблони (всі файли і папки потрапляють у Git)
 !app/scss/**/*.scss
 !app/modules/**/scss/**/*.scss
+#HTML
+app/index.html
 
 # Логи
 *.log
