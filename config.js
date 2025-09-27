@@ -83,6 +83,12 @@ export const config = {
         scssFile: `${root}/scss/_fonts.scss`
     },
     html: {
+        srcFiles:
+            [
+                `${root}/index-src.html`,
+                `${root}/**/*.html`,
+                `!${root}/index.html`,
+            ],
         srcFile: `${root}/index-src.html`,
         srcFilesForDist: `${dist}/**/*.html`,
         srcIndexFileForDist: `${dist}/index.html`,
@@ -106,15 +112,15 @@ export const config = {
         srcFiles: `${root}/favicon/**/*.{png,jpg,jpeg,ico,svg}`,
     },
     prod: {
-            srcFiles: [
-                `${root}/**/*.html`,
-                `!${root}/**/*-src.html`, // виключаємо сирцеві HTML
-                `${root}/css/**/*.css`,
-                `${root}/js/**/*.min.js`,
-                `${root}/images/**/*`,
-                `!${root}/images/sprite-src{,/**}`, // виключаємо sprite-src
-                `${root}/fonts/**/*.{woff,woff2}`,
-                `!${root}/modules{,/**}`, // виключаємо modules
-            ],
-        },
+        srcFiles: [
+            `${root}/**/*.html`,
+            `!${root}/**/*-src.html`, // виключаємо сирцеві HTML
+            `${root}/css/**/*.css`,
+            `${root}/js/**/*.min.js`,
+            `${root}/images/**/*`,
+            `!${root}/images/sprite-src{,/**}`, // виключаємо sprite-src
+            `${root}/fonts/**/*.{woff,woff2}`,
+            `!${root}/modules{,/**}`, // виключаємо modules
+        ],
+    },
 }

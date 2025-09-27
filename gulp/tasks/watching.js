@@ -12,6 +12,7 @@ import {cleanSprite} from "./cleanSprite.js";
 import {sprite} from "./sprite.js";
 import {fonts} from "./fonts.js";
 import {htmlModules} from "./htmlModules.js";
+import {bs} from "./server.js";
 
 const {watch, series} = gulp;
 
@@ -61,7 +62,8 @@ export const watching = () => {
     );
 
     watch(
-        config.html.srcFile,
+        //HTML(збірка у модулі та оновлення без index.html)
+        config.html.srcFiles,
         series(
             htmlModules
         )
