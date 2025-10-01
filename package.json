@@ -4,5 +4,9 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development gulp dev",
     "build": "cross-env NODE_ENV=production gulp build"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "gulp": "4.0.2"
   }
 }
