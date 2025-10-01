@@ -1,0 +1,130 @@
+/* Box sizing */
+html {
+    box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* Body defaults */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings and text */
+h1, h2, h3, h4, h5, h6, p, blockquote, pre {
+    margin: 0;
+    font-weight: normal;
+}
+
+/* Lists */
+ul[class], ol[class] {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+}
+
+/* Images & media */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Forms */
+input, button, textarea, select, optgroup {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+    appearance: none;
+}
+
+button {
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* Fieldset & legend */
+fieldset, legend {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: #ccc;
+}
+
+/* Details/Summary */
+details, summary {
+    display: block;
+}
+
+/* Placeholder */
+::placeholder {
+    color: inherit;
+    opacity: 0.7;
+}
+
+/* Selection */
+::selection {
+    background: rgba(0,0,0,0.2);
+    color: inherit;
+}
+
+/* Scrollbars (modern browsers) */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.3) rgba(0,0,0,0.1);
+}
+
+/* Iframes, audio, video */
+iframe, audio, video {
+    max-width: 100%;
+    display: block;
+}
+
+/* Hidden utility */
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}

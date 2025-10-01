@@ -1,0 +1,49 @@
+//Змінні
+
+
+//Міксини
+@mixin bg(
+    $module,
+    $imageName,
+    $format: jpg,
+    $repeat: no-repeat,
+    $position: center,
+    $size: cover,
+    $retina: false
+) {
+    // Шляхи для стандартних форматів
+    $avifPath: "../images/#{$module}/#{$imageName}.avif";
+    $webpPath: "../images/#{$module}/#{$imageName}.webp";
+    $fallbackPath: "../images/#{$module}/#{$imageName}.#{$format}";
+
+    // Спільні властивості для всіх браузерів
+    background-repeat: $repeat;
+    background-position: $position;
+    background-size: $size;
+
+    // Fallback для старих браузерів
+    background-image: url(#{$fallbackPath});
+
+    // Сучасні браузери
+    @if $retina {
+        // Retina/2x версії
+        $avif2x: "../images/#{$module}/#{$imageName}@2x.avif";
+        $webp2x: "../images/#{$module}/#{$imageName}@2x.webp";
+        $fallback2x: "../images/#{$module}/#{$imageName}@2x.#{$format}";
+
+        background-image: image-set(
+                url('#{$avifPath}') type('image/avif'),
+                url('#{$webpPath}') type('image/webp'),
+                url('#{$fallbackPath}') type('image/#{$format}'),
+                url('#{$avif2x}') type('image/avif') 2x,
+                url('#{$webp2x}') type('image/webp') 2x,
+                url('#{$fallback2x}') type('image/#{$format}') 2x
+        );
+    } @else {
+        background-image: image-set(
+                url('#{$avifPath}') type('image/avif'),
+                url('#{$webpPath}') type('image/webp'),
+                url('#{$fallbackPath}') type('image/#{$format}')
+        );
+    }
+}

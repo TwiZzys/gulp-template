@@ -1,0 +1,84 @@
+# -------------------
+#Gitignore для розробки шаблону gulp
+# -------------------
+
+# -------------------
+# Node modules
+# -------------------
+node_modules/
+
+# -------------------
+# Production / збірка
+# -------------------
+dist/
+build/
+
+# -------------------
+# CSS
+# -------------------
+app/css/**/*.css
+app/css/**/*.map
+!app/css/**/.gitkeep
+
+# -------------------
+# Favicon (всі підпапки зберігаються)
+# -------------------
+app/favicon/**/*
+!app/favicon/**/.gitkeep
+
+# -------------------
+# Fonts (тільки файли у корені папки)
+# -------------------
+app/fonts/*
+!app/fonts/.gitkeep
+
+# -------------------
+# Глобальні зображення (включно з sprite-src та .gitkeep)
+# -------------------
+app/images/**
+!app/images/sprite-src/
+!app/images/sprite-src/.gitkeep
+!app/images/**/.gitkeep
+
+# Спрайт (готовий файл ігнорувати)
+app/images/sprite.svg
+
+# -------------------
+# Модульні зображення (включно з підпапками, крім sprite-src та .gitkeep)
+# -------------------
+app/modules/**/images/**
+!app/modules/**/images/sprite-src/
+!app/modules/**/images/sprite-src/.gitkeep
+!app/modules/**/images/**/.gitkeep
+
+# -------------------
+# JS
+# -------------------
+app/js/**/*.js
+app/js/**/*.map
+!app/js/main.js
+
+# -------------------
+# SCSS шаблони (всі файли і папки потрапляють у Git)
+# -------------------
+!app/scss/**/*.scss
+!app/modules/**/scss/**/*.scss
+
+# -------------------
+# Логи
+# -------------------
+*.log
+yarn-error.log
+npm-debug.log
+
+# -------------------
+# IDE / редактори
+# -------------------
+.idea/
+.vscode/
+
+# -------------------
+# Системні файли
+# -------------------
+.DS_Store
+Thumbs.db

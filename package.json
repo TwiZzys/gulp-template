@@ -1,0 +1,8 @@
+{
+  "private": "true",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development gulp dev",
+    "build": "cross-env NODE_ENV=production gulp build"
+  }
+}
