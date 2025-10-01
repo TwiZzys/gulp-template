@@ -64,6 +64,9 @@ app/js/**/*.map
 !app/scss/**/*.scss
 !app/modules/**/scss/**/*.scss
 
+#HTML
+app/index.html
+
 # -------------------
 # Логи
 # -------------------
