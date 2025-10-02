@@ -10,4 +10,12 @@
 // Глобальні стилі
 @use "global";
 
-// Модулі
+// Модуль header
+@use "../modules/header/scss/header";
+@use "../modules/header/scss/header.media";
+
+//Інші модулі
+
+//модуль footer
+@use "../modules/footer/scss/footer";
+@use "../modules/footer/scss/footer.media";
